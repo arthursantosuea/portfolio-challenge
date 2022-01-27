@@ -20,6 +20,9 @@
   font-family: "Merriweather Sans", sans-serif;
   scroll-behavior: smooth;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--body-bg-color);
   color: var(--text-color);
@@ -29,6 +32,9 @@ body {
     "footer footer footer";
   max-width: 1200px;
   margin: 0 auto;
+}
+nav {
+  display: none;
 }
 .handle-profile {
   grid-area: profile;
@@ -187,7 +193,7 @@ body {
   border-radius: 16px;
   box-shadow: 4px 4px 8px #00000073;
 }
-.recent-posts a{
+.recent-posts a {
   text-decoration: none;
   color: var(--text-color);
 }
@@ -235,22 +241,56 @@ footer {
   justify-content: center;
 }
 
-@media(max-width: 600px){
-  body{
+@media (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 10vh;
+  }
+  nav {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 12.5vw;
+    margin-bottom: 24px;
+    background-color: var(--body-bg-color);
+    border-radius: 8px;
+    padding: 16px;
+    width: 75vw;
+    box-shadow: 0px 0px 54px 0px #cb92b1;
+    -webkit-box-shadow: 0px 0px 12px 0px #cb92b1;
+    -moz-box-shadow: 0px 0px 54px 0px #cb92b1;
+  }
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav img {
+    width: 32px;
+  }
+  .projects {
     display: flex;
     flex-direction: column;
   }
-  .projects{
-    display: flex;
-    flex-direction: column;
-  }
-  .main{
+  .main {
     display: flex;
     flex-direction: column;
     margin: 0 24px;
   }
-  .post p{
-    font-size: 8px;
+  .post {
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
-
+  .post img {
+    width: 32px;
+    height: 32px;
+  }
+  .post p {
+    font-size: 12px;
+  }
+  .post-description {
+    margin-left: 0;
+  }
 }
